@@ -28,29 +28,46 @@
     <div class="container">
         <div class="row row-content"
                 ng-init="dish=
-                {
-                    name: 'Uthapizza',
+                [{
+                    name: 'Uthapizza 1',
                     image: 'images/uthapizza.png',
                     category: 'mains',
                     label: 'Hot',
                     price:  '4.99',
                     description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives ...',
                     comments: ''
-                }">
+                },
+                {
+                    name: 'Uthapizza 2',
+                    image: 'images/uthapizza.png',
+                    category: 'mains',
+                    label: 'Hot',
+                    price:  '5.99',
+                    description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives ...',
+                    comments: ''
+                },{
+                    name: 'Uthapizza 3',
+                    image: 'images/uthapizza.png',
+                    category: 'mains',
+                    label: 'Hot',
+                    price:  '6.99',
+                    description: 'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives ...',
+                    comments: ''
+                }]">
             <div class="col-xs-12">
-                <div class="media">
+                <div class="media" ng-repeat="item in dish">
                     <div class="media-left media-middle">
-                        <a href="#"><img class="media-object image-thumbnail" ng-src="{{dish.image}}" alt="Uthapizza"></a>
+                        <a href="#"><img class="media-object image-thumbnail" ng-src="{{item.image}}" alt="{{item.name}}"></a>
                     </div>
                     <div class="media-body">
-                        <h2 class="media-heading">{{dish.name}}
-                            <span class="label label-danger lable-xx">{{dish.label}}</span>
-                            <span class="badge">{{dish.price | currency}}</span>
+                        <h2 class="media-heading">{{item.name}}
+                            <span class="label label-danger lable-xx">{{item.label}}</span>
+                            <span class="badge">{{item.price | currency}}</span>
                         </h2>
-                        <p>{{dish.description}}</p>
-                        <p>Comment: {{dish.comment}}</p>
+                        <p>{{item.description}}</p>
+                        <p>Comment: {{item.comment}}</p>
                         <p>Type your comment here:
-                        <input type="text" ng-model="dish.comment"/>
+                        <input type="text" ng-model="item.comment"/>
                         </p>
                     </div>
                 </div>                
